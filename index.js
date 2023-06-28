@@ -13,6 +13,7 @@ user.then(function(data){
 const cart = ["Shoes", "Pants", "Kurta"];
 
 const promise = createOrder(cart);
+console.log(promise);
 
 promise.then(function (orderId){
     console.log(orderId);
@@ -33,7 +34,9 @@ function createOrder(cart){
         const orderId = "12345";
 
         if(orderId){
-            resolve(orderId);
+            setTimeout(function(){
+                resolve(orderId);
+            },5000)
         }
 
         
