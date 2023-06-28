@@ -10,6 +10,9 @@ user.then(function(data){
 
 
 
+
+
+
 const cart = ["Shoes", "Pants", "Kurta"];
 
 const promise = createOrder(cart);
@@ -17,7 +20,10 @@ console.log(promise);
 
 promise.then(function (orderId){
     console.log(orderId);
-});
+})
+.catch(function(err){
+    console.log(err.message);
+})
 
 function createOrder(cart){
     const pr = new Promise(function(resolve, reject){
@@ -45,5 +51,7 @@ function createOrder(cart){
 }
 
 function ValidateCart(cart){
-    return true;
+    // return true;
+    return false;    //---> It thorows error in console
 }
+
